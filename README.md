@@ -17,9 +17,10 @@ pantalla su tabla de multiplicar (del 1 al 12).
 ```
 **Ejercicio 3**
 
+```
 Escribir un programa que cree dos variables enteras y muestre por pantalla, la suma,
 la resta, la multiplicación, la división entera y el resto de la división entera.
-
+```
 **Ejercicio 4**
 
 ```
@@ -62,13 +63,11 @@ dicho número es par o impar.
 ```
 **Ejercicio 8**
 
-
-2019
-
+```
 Escribir un programa que declare un numero entero del 1 al 7 y muestre por pantalla
 el dia de la semana correspondiente. Controlar que el numero se encuentre en el
 rango correcto, si no es asi, informar un error. Si el numero es 2 el dia es martes.
-
+```
 **Ejercicio 9**
 
 ```
@@ -113,7 +112,7 @@ la salida debe ser:
 ```
 Nota: Hacerlo de dos formas, usando y sin usar la ecuacion:
 ```
-Ejercicio 13
+**Ejercicio 13**
 
 ```
 Construir un programa que lea un número natural N y calcule la suma de los primeros
@@ -125,9 +124,6 @@ N números pares.
 Escribir un programa que recibe como entrada desde el usuario los valores de a , b y c
 de un polinomio de grado 2, e informa las raices (reales y complejas).
 ```
-
-2019
-
 **Ejercicio 15**
 
 ```
@@ -215,7 +211,7 @@ como la suma de los dos terminos anteriores, los primeros dos terminos son igual
 Desarrollar un programa que reciba un numero natural e informe si pertenece o no a
 la serie de Fibonacci.
 ```
-Ejercicio 24
+**Ejercicio 24**
 
 ```
 Dados dos números naturales (incluido el cero), obtener su producto por sumas
