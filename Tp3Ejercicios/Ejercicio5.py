@@ -11,4 +11,3 @@ def triangular(n):
     else:
         tri = n + triangular(n-1)
     return tri
-    
