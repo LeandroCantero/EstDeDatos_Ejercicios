@@ -16,3 +16,6 @@ def granosPorCasillero(casillero):
     else:
         granos = 2 * granosPorCasillero(casillero -1)
     return granos
+
+def totalTablero(n):
+    return granosPorCasillero(n) + granosPorCasillero(n)
