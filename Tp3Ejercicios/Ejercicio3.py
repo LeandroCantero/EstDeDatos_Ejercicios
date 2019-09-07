@@ -11,11 +11,14 @@ def granosPorCasillero(casillero):
     granos = 0
     if casillero == 1:
         granos = 1
-    elif casillero == 2:
-        granos = 2
     else:
         granos = 2 * granosPorCasillero(casillero -1)
     return granos
 
 def totalTablero(n):
-    return granosPorCasillero(n) + granosPorCasillero(n)
+    granosTotales = 0
+    if n == 0:
+        granosTotales = granosTotales
+    else:
+        granosTotales = granosPorCasillero(n) + granosPorCasillero(n)
+    return granosTotales
