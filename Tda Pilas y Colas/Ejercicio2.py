@@ -11,5 +11,5 @@ pila1 = pila.Pila(5)
 
 def cantidadElementos(pilaEnteros):
     p = pilaEnteros.pila
-    vector = np.zeros(shape=(tamaño), dtype = p.dtype)
-    
+    vector = np.zeros(shape=(len(p)), dtype = p.dtype)
+    print(len(vector))
