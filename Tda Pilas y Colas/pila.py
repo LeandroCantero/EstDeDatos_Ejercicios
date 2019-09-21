@@ -7,7 +7,7 @@ class Pila:
         self.pila = np.zeros(shape=(capacidad), dtype = tipo)
         self.cima = None
         
-    def empty(self):
+    def toEmpty(self):
         self.cima = None
         
     def push(self, dato):
@@ -29,7 +29,7 @@ class Pila:
     def top(self):
         return self.pila[self.cima]
     
-    def clone(self):
+    def toClone(self):
         nueva = Pila(len(self.pila), self.pila.dtype)
         if not self.isEmpty():
             for i in range(self.cima+1):
@@ -45,6 +45,10 @@ class Pila:
         
     def isFull(self):
         return self.cima == self.capacidad-1
+    
+    def printStack(self):
+        return self.pila
+        
     
     
     
