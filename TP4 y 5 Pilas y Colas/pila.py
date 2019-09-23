@@ -50,6 +50,9 @@ class Pila:
     def printStack(self):
         for i in range(len(self.pila)):
             print( self.pila[i], end = ' ')
+            
+    def length(self):
+        return len(self.pila)
         
     
     

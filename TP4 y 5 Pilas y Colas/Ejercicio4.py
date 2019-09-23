@@ -11,6 +11,11 @@ import persona
 
 pila3 = pila.Pila(10, persona.Persona)
 
-def incorporarPersona():
-        
+def incorporarPersona(pila):
+    for i in range(pila.length()):
+        pila.push(persona.Persona)
+    cantDesapilar = int(input("Ingrese cuantos elementos quiere desapilar:"))
+    for i in range(cantDesapilar):
+        pila.pop()
+    print("Tamaño de pila:", pila3.size())
 
