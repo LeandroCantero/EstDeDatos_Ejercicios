@@ -9,8 +9,8 @@ desapilar y mostrar los datos correspondientes.
 import pila
 import persona
 
-#pila3 = pila.Pila(10,  Persona)
+pila3 = pila.Pila(10, persona.Persona)
 
-#def incorporarPersona():
-    
+def incorporarPersona():
+        
 
