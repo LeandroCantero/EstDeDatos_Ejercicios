@@ -44,7 +44,7 @@ class Pila:
         return self.cima == None
         
     def isFull(self):
-        return self.cima == self.capacidad-1
+        return self.cima == len(self.pila)-1
     
     def printStack(self):
         return self.pila

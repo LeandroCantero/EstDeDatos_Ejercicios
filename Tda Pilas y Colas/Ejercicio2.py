@@ -8,8 +8,15 @@ import numpy as np
 import pila
 
 pila1 = pila.Pila(5)
+pila1.push(3)
+pila1.push(5)
 
 def cantidadElementos(pilaEnteros):
     p = pilaEnteros.pila
     vector = np.zeros(shape=(len(p)), dtype = p.dtype)
     print(len(vector))
+    print(p)
+    for i in range(2):
+       pila1.pop()
+       print(p)
+    
