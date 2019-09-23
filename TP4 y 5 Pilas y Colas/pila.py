@@ -3,7 +3,7 @@
 import numpy as np
 
 class Pila:
-    def __init__(self, capacidad, tipo = int):
+    def __init__(self, capacidad, tipo):
         self.pila = np.zeros(shape=(capacidad), dtype = tipo)
         self.cima = None
         
@@ -38,6 +38,7 @@ class Pila:
         return nueva        
         
     def size(self):
+        if self.isEmpty(): self.cima = -1
         return self.cima +1
         
     def isEmpty(self):
@@ -47,7 +48,8 @@ class Pila:
         return self.cima == len(self.pila)-1
     
     def printStack(self):
-        return self.pila
+        for i in range(len(self.pila)):
+            print( self.pila[i], end = ' ')
         
     
     

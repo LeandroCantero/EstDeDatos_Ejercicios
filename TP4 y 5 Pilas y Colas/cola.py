@@ -50,6 +50,7 @@ class Cola:
         return self.fin == self.capacidad-1
     
     def printQueue(self):
-        return self.cola
+        for i in range(len(self.cola)):
+            print(self.cola[i], end = ' ')
             
         
