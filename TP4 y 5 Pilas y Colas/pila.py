@@ -25,6 +25,7 @@ class Pila:
             self.cima -= 1
         else:
             raise Exception("Está vacía")
+        return self.pila[self.cima + 1]
     
     def top(self):
         return self.pila[self.cima]
