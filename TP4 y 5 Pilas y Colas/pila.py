@@ -19,13 +19,14 @@ class Pila:
             raise Exception("Está llena")
             
     def pop(self):
-        if self.cima == 0:
+        cimaAux = self.cima
+        if self.cima == -1:
            self.cima = None 
-        elif not self.isEmpty():
+        if not self.isEmpty():
             self.cima -= 1
         else:
             raise Exception("Está vacía")
-        return self.pila[self.cima + 1]
+        return self.pila[cimaAux]
     
     def top(self):
         return self.pila[self.cima]

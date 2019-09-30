@@ -15,6 +15,6 @@ def cantidadElementos(pilaEnteros):
     pilaEnteros.printStack()
     print("")
     for i in range(2):
-       pilaEnteros.pop()
+        pilaEnteros.pop()
     print(pilaEnteros.size())
     
