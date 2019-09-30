@@ -19,8 +19,8 @@ class Cola:
             raise Exception("Está llena")
             
     def dequeue(self):
-        if self.fin == 0:
-            self.fin = None
+        if self.isEmpty():
+            self.fin = 0
         elif not self.isEmpty():
             for i in range(self.fin):
                 self.cola[i] = self.cola[i+1]
