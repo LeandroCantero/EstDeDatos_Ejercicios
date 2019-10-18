@@ -49,8 +49,12 @@ class Juzgado:
         return self.colaNormal.size() + self.colaUrgente.size()
     
     def cantidadPorTipo(self, tipExp):
-        array = np.zeros(shape=(self.colaNormal.size()), dtype = int)
+        array = np.zeros(shape=(2), dtype = int)
+        cantidad = 0
         for i in range(len(array)):
+            if tipExp == self.colaNormal[i].getCausa():
+                cantidad += 1
+        array[0] = cantidad
             
             
         
