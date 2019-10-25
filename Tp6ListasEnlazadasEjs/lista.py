@@ -1,6 +1,9 @@
 #Lista
 
-import NodoLista
+class NodoLista:
+    def __init__(self,dato = None):
+        self.dato = dato
+        self.siguiente = None
 
 class Lista:
     def __init__(self):
@@ -15,6 +18,7 @@ class Lista:
         while aux.siguiente != None:
             contador +=1
             aux = aux.siguiente
+        contador+=1
         return contador
     
     def vaciar(self):
@@ -27,9 +31,9 @@ class Lista:
         elif pos == 1:
             aux = aux.siguiente
         else:
-            for i in range(pos-1):
+            for i in range(pos):
                 aux = aux.siguiente
-        return aux
+        return aux.dato
     
     def append(self, dato):
         nuevo = NodoLista(dato)
@@ -40,18 +44,26 @@ class Lista:
             while aux.siguiente != None:
                 aux = aux.siguiente
             aux.siguiente = nuevo
-            
+    #    
     def reemplazar(self, dato, pos):
         nuevo = NodoLista(dato)
         aux = self.primero
-        for i in range(pos-1):
+        if pos == 0:
             aux = aux.siguiente
-        if pos == self.tamanio():
-            aux = nuevo
+            self.primero = nuevo
+            nuevo.siguiente = aux
+        elif pos == 1:
+            aux2 = aux.siguiente.siguiente
+            aux.siguiente = nuevo
+            nuevo.siguiente = aux2
         else:
+            for i in range(pos):
+                aux = aux.siguiente
             aux2 = aux.siguiente
             aux = nuevo
-            aux.siguiente = aux2
+            nuevo.siguiente = aux2
+            
+            
                         
     def eliminarElemento(self, pos):
         aux = self.primero
@@ -60,17 +72,35 @@ class Lista:
             aux = None
             self.primero = aux2
         elif pos == 1:
-            aux = aux.siguiente.siguiente
+            aux.siguiente = aux.siguiente.siguiente
         else:
             for i in range(pos-1):
                 aux = aux.siguiente
-            aux = aux.siguiente.siguiente           
+            aux.siguiente = aux.siguiente.siguiente 
+            
+    def clonar(self, lista):
+        for i in range (self.tamanio()):
+            lista.append(self.obtenerElemento(i))
         
-    #def instertarElementoEn(self, dato, pos):
         
     def imprimir(self):
         aux = self.primero
+        if aux.siguiente == None:
+            print(aux.dato)
         while aux.siguiente != None:
+            print(aux.dato, end=" ")
             aux = aux.siguiente
-            print(aux)     
+        print(aux.dato)
+        
+    #Ejercicio 2
+    #def intercambiarPrimeros(self):
+    
+    #Ejercicio 3
+    def expandirLista(self, lista):
+        for i in range(lista.tamanio()):
+            self.append(lista.obtenerElemento(i))
+        
+    #Ejercicio 4
+    
+        
         
