@@ -1,8 +1,9 @@
 #Main
 
-import lista
+import listaR
 
-lista = lista.Lista()
+lista = listaR.Lista()
+
 
 def main():
     print("Está vacía:",lista.isEmpty())

@@ -120,4 +120,6 @@ class Lista:
             aux = aux.siguiente
         print("Veces eliminado:", contador)
         
-        
+    
+   
+            
