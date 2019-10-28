@@ -93,7 +93,13 @@ class Lista:
         print(aux.dato)
         
     #Ejercicio 2
-    #def intercambiarPrimeros(self):
+    def intercambiarPrimeros(self):
+        if not self.isEmpty():
+            aux = self.primero.siguiente
+            self.primero.siguiente = aux.siguiente
+            aux.siguiente = self.primero
+            self.primero = aux
+        
     
     #Ejercicio 3
     def expandirLista(self, lista):
@@ -101,6 +107,17 @@ class Lista:
             self.append(lista.obtenerElemento(i))
         
     #Ejercicio 4
-    
+    def eliminarOcurrencias(self, dato):
+        contador = 0
+        aux = NodoLista(0)
+        aux.siguiente = self.primero
+        while aux.siguiente != None:
+            if aux.siguiente.dato == dato:
+                aux.siguiente = aux.siguiente.siguiente
+                contador += 1
+            if self.primero.dato == dato:
+                self.primero = self.primero.siguiente
+            aux = aux.siguiente
+        print("Veces eliminado:", contador)
         
         
