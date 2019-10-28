@@ -44,7 +44,7 @@ class Lista:
             while aux.siguiente != None:
                 aux = aux.siguiente
             aux.siguiente = nuevo
-    #    
+    #
     def reemplazar(self, dato, pos):
         nuevo = NodoLista(dato)
         aux = self.primero

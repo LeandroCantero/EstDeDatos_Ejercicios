@@ -16,24 +16,34 @@ class NodoLista:
         if self.siguiente != None:
             contador = 1 + self.siguiente.tamanio()
         return contador
+    
+    def append(self, nuevo):
+        if self.siguiente == None:
+            self.siguiente = nuevo
+        else:
+            self.siguiente.append(nuevo)
+            
+    def insert(self, nuevo, pos):
+        if self.siguiente == None:
+            self.siguiente = nuevo
         
-
+            
+            
+        
+    
 class Lista:
     def __init__(self):
         self.primero = None
         
     def isEmpty(self):
         return self.primero == None
-    
+
     def append(self, dato):
         nuevo = NodoLista(dato)
         if self.isEmpty():
             self.primero = nuevo
         else:
-            aux = self.primero
-            while aux.siguiente != None:
-                aux = aux.siguiente
-            aux.siguiente = nuevo
+            self.primero.append(nuevo)
             
     def vaciar(self):
         self.primero = None
@@ -55,5 +65,16 @@ class Lista:
         if not self.isEmpty():
             contador = self.primero.tamanio()
         return contador
+    
+    def insert(self, dato, pos):
+        nuevo = NodoLista(dato)
+        if self.isEmpty():
+            self.primero = nuevo
+        elif pos == 0:
+            nuevo.siguiente = self.primero
+            self.primero = nuevo
+        else:
+            self.primero.insert(nuevo, pos)
             
 
+    #Recorrer lista y guardarlos en un array
