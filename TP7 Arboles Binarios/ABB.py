@@ -31,13 +31,14 @@ class NodoArbol:
         return self.right
     
     def insert(self, dato):
-        if self.left != None and dato < self.data:
+        if self.left == None and dato < self.data:
             self.left = dato
-        elif self.right !=None and dato > self.data:
+        else:
+            self.left.insert(dato)
+        if self.right == None and dato > self.data:
             self.right = dato
         else:
-            self.insert(dato)
-            
+            self.right.insert(dato)
     
     def minimo(self):
         if self.left != None:
@@ -52,10 +53,6 @@ class NodoArbol:
         else:
             maximo = self.right.maximo()
         return maximo
-        
-        
-        
-            
         
     
     
@@ -95,10 +92,10 @@ class ABB:
         else:
             maximo = self.root.maximo()
         return maximo
-            
-            
+                    
     def tieneIzq(self):
         return self.root.left != None
+    
     def tieneDer(self):
         return self.root.right != None
                 
