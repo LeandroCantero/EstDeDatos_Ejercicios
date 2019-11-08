@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from graphviz import Digraph
+#from graphviz import Digraph
 
 class NodoArbol:
     def __init__(self, dato = None):
@@ -31,14 +31,6 @@ class NodoArbol:
         return self.right
     
     def insert(self, dato):
-        if self.left == None and dato < self.data:
-            self.left = dato
-        else:
-            self.left.insert(dato)
-        if self.right == None and dato > self.data:
-            self.right = dato
-        else:
-            self.right.insert(dato)
     
     def minimo(self):
         if self.left != None:
@@ -60,13 +52,14 @@ class ABB:
     def __init__(self):
         self.root = None
 
-    def treePlot(self, fileName='tree'):
+    '''def treePlot(self, fileName='tree'):
         if not self.isEmpty():
             treeDot = Digraph()
             treeDot.node(str(self.root.data), str(self.root.data))
             self.root.treePlot(treeDot)
             treeDot.render(fileName, view=True)
-            
+    '''  
+        
     def isEmpty(self):
         return self.root == None
     
@@ -75,8 +68,11 @@ class ABB:
         if self.isEmpty():
             self.root = new
         else:
-            self.root.insert(dato)
-           
+            self.root.insert(new)
+            
+                    
+            
+                
     def minimo(self):
         minimo = None
         if not self.tieneIzq():
