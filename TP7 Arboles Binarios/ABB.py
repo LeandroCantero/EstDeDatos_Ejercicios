@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-#from graphviz import Digraph
+from graphviz import Digraph
 
 class NodoArbol:
     def __init__(self, dato = None):
@@ -30,21 +30,56 @@ class NodoArbol:
     def getRight(self):
         return self.right
     
-    def insert(self, dato):
+    def getData(self):
+        return self.data
+    
+    def insert(self, new):
+        if new.getData() < self.getData():
+            if self.left == None:
+                self.setLeft(new)
+            else:
+                self.left.insert(new)
+        if new.getData() > self.getData():
+            if self.right == None:
+                self.setRight(new)
+            else:
+                self.right.insert(new)
     
     def minimo(self):
-        if self.left != None:
-            minimo = self.left
+        if self.left == None:
+            minimo = self.data
         else:
             minimo = self.left.minimo()
         return minimo
     
     def maximo(self):
-        if self.right != None:
-            maximo = self.right
+        if self.right == None:
+            maximo = self.data
         else:
             maximo = self.right.maximo()
         return maximo
+    
+    def inOrder(self, node):
+        if node == None:
+            return
+        self.inOrder(node.left)
+        print(node.data,end=" ")
+        self.inOrder(node.right)
+        
+    def postOrder(self, node):
+        if node == None:
+            return
+        self.postOrder(node.left)
+        self.postOrder(node.right)
+        print(node.data, end=" ")
+        
+    def preOrder(self, node):
+        if node == None:
+            return
+        print(node.data, end=" ")
+        self.preOrder(node.left)
+        self.preOrder(node.right)
+        
         
     
     
@@ -52,13 +87,15 @@ class ABB:
     def __init__(self):
         self.root = None
 
-    '''def treePlot(self, fileName='tree'):
+    def treePlot(self, fileName='tree'):
         if not self.isEmpty():
             treeDot = Digraph()
             treeDot.node(str(self.root.data), str(self.root.data))
             self.root.treePlot(treeDot)
-            treeDot.render(fileName, view=True)
-    '''  
+            treeDot.render(fileName, view=True) 
+            
+    def toEmpty(self):
+        self.root = None
         
     def isEmpty(self):
         return self.root == None
@@ -69,9 +106,6 @@ class ABB:
             self.root = new
         else:
             self.root.insert(new)
-            
-                    
-            
                 
     def minimo(self):
         minimo = None
@@ -94,6 +128,18 @@ class ABB:
     
     def tieneDer(self):
         return self.root.right != None
+    
+    def inOrder(self):
+        if not self.isEmpty():
+            self.root.inOrder(self.root)
+            
+    def postOrder(self):
+        if not self.isEmpty():
+            self.root.postOrder(self.root)
+        
+    def preOrder(self):
+        if not self.isEmpty():
+            self.root.preOrder(self.root)
                 
                     
             
