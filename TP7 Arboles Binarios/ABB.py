@@ -80,7 +80,24 @@ class NodoArbol:
         self.preOrder(node.left)
         self.preOrder(node.right)
         
-        
+    def search(self, new):
+        loTiene = "No está en el arbol"
+        if new.getData() < self.getData() and self.left != None:
+            print(self.getData())
+            if new.getData() == self.left.data:
+                print("Siguiente:")
+                print(self.left.data)
+                loTiene = "Está en el arbol"
+            else:
+                self.left.search(new)    
+        if new.getData() > self.getData() and self.right != None:
+            if new.getData() == self.right.data:
+                loTiene = "Está en el arbol"
+            else:
+                self.right.search(new)
+        return loTiene
+            
+            
     
     
 class ABB:
@@ -140,6 +157,16 @@ class ABB:
     def preOrder(self):
         if not self.isEmpty():
             self.root.preOrder(self.root)
+            
+    def search(self, dato):
+        new = NodoArbol(dato)
+        loTiene = "No está en el arbol"
+        if self.root.getData() == new.getData():
+            loTiene = "Está en el arbol" 
+        else:
+            loTiene = self.root.search(new)
+        return loTiene
+        
                 
                     
             

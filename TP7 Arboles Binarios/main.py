@@ -21,5 +21,8 @@ def main():
     print("Post-Order")
     arbol.postOrder()
     print()
-    
+    print(arbol.search(25))
+    print(arbol.search(17))
+    print(arbol.search(15))
+    '''print(arbol.search(13))'''    
     
