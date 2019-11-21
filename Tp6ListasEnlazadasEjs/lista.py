@@ -59,11 +59,9 @@ class Lista:
         else:
             for i in range(pos):
                 aux = aux.siguiente
-            aux2 = aux.siguiente
-            aux = nuevo
-            nuevo.siguiente = aux2
-            
-            
+            #aux3 = aux.siguiente
+            aux.dato = nuevo.dato
+            #nuevo.siguiente = aux3            
                         
     def eliminarElemento(self, pos):
         aux = self.primero

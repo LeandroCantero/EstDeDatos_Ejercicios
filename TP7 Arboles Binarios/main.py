@@ -24,5 +24,6 @@ def main():
     print(arbol.search(25))
     print(arbol.search(17))
     print(arbol.search(15))
-    '''print(arbol.search(13))'''    
-    
+    print(arbol.search(13))  
+    print(arbol.search(55))
+
