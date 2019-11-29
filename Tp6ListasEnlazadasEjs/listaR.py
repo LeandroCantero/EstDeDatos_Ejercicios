@@ -26,6 +26,16 @@ class NodoLista:
     def insert(self, nuevo, pos):
         if self.siguiente == None:
             self.siguiente = nuevo
+            
+    def appendOrder(self, dato):
+        nuevo = NodoLista(dato)
+        if nuevo.dato < self.siguiente.dato:
+            aux2 = self.siguiente
+            self.siguiente = nuevo
+            nuevo.siguiente = aux2
+        else:
+            self.siguiente.appendOrder(self, dato)
+        
         
             
             
@@ -75,6 +85,19 @@ class Lista:
             self.primero = nuevo
         else:
             self.primero.insert(nuevo, pos)
+    
+    def appendOrder(self, dato):
+        nuevo = NodoLista(dato)
+        aux = self.primero
+        if self.isEmpty():
+            self.primero = nuevo
+        else:
+            if nuevo.dato < aux.dato:
+                self.primero = nuevo
+                nuevo.siguiente = aux
+            else:
+                self.primero.appendOrder(dato)
+        
             
 
     #Recorrer lista y guardarlos en un array

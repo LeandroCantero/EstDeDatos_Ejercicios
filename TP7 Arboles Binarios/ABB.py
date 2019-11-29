@@ -7,6 +7,7 @@ class NodoArbol:
         self.data = dato
         self.left = None
         self.right = None
+        self.total = 0
 
     '''def treePlot(self, dot):
         if self.hasLeft():
@@ -88,11 +89,30 @@ class NodoArbol:
             loTiene = self.left.search(new)
         elif self.data < new.data and self.right != None:
            loTiene = self.right.search(new)
-        return loTiene
-            
-            
-            
+        return loTiene     
     
+    def sumar(self, actual):
+        if actual == None:
+            return 0
+        
+        return actual.data + self.sumar(actual.left) + self.sumar(actual.right)
+           
+    def sumarHojas(self, actual):
+        if actual == None:
+            return 0
+        if actual.left is None and actual.right is None:
+            self.total += actual.data
+        self.sumarHojas(actual.left)
+        self.sumarHojas(actual.right)
+        return self.total
+        
+    def contarHojas(self, actual):
+        if actual == None:
+            return 0
+        if actual.left is None and actual.right is None:
+            return 1
+        else:
+            return self.contarHojas(actual.left) + self.contarHojas(actual.right)
     
 class ABB:
     def __init__(self):
@@ -160,8 +180,24 @@ class ABB:
         else:
             loTiene = self.root.search(new)
         return loTiene
-        
-                
-                    
-            
-            
+    
+    def sumar(self):
+        if not self.isEmpty():
+            suma = self.root.sumar(self.root)
+        else:
+            suma = 0
+        return suma
+    
+    def sumarHojas(self):
+        if not self.isEmpty():
+            suma = self.root.sumarHojas(self.root)
+        else:
+            suma = 0
+        return suma
+    
+    def contarHojas(self):
+        if not self.isEmpty():
+            contador = self.root.contarHojas(self.root)
+        else:
+            contador = 0
+        return contador

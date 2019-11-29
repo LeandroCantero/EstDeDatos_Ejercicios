@@ -118,6 +118,28 @@ class Lista:
             aux = aux.siguiente
         print("Veces eliminado:", contador)
         
+    def appendOrder(self, dato):
+        nuevo = NodoLista(dato)
+        aux = self.primero
+        if self.isEmpty():
+            self.primero = nuevo
+        else:
+            if nuevo.dato < aux.dato:
+                self.primero = nuevo
+                nuevo.siguiente = aux
+            else:
+                while nuevo.dato > aux.dato:
+                    if nuevo.dato < aux.siguiente.dato:
+                        aux2 = aux.siguiente
+                        aux.siguiente = nuevo
+                        nuevo.siguiente = aux2
+                    aux = aux.siguiente
+                    
+                    
+                    
+                
+                
+        
     
    
             

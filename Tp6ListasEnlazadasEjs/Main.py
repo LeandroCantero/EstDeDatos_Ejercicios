@@ -23,9 +23,9 @@ def main():
     lista1.imprimir()
     lista1.reemplazar(4,6)
     lista1.imprimir()
-    invertirLista(lista1)
+    "invertirLista(lista1)"
     "duplicarLista(lista1)"
-    mezclarListas(lista1, lista1)
+    "mezclarListas(lista1, lista1)"
  
     
 def tresListas(lista, k):

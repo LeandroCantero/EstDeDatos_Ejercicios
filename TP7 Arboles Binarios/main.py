@@ -26,4 +26,8 @@ def main():
     print(arbol.search(15))
     print(arbol.search(13))  
     print(arbol.search(55))
+    print("Total:", arbol.sumar())
+    print("Total hojas:", arbol.sumarHojas())
+    print("Cantidad de hojas:", arbol.contarHojas())
+    
 
